@@ -1,8 +1,7 @@
-FROM node:alpine
-
-EXPOSE 1337
-
-WORKDIR /var/www
-COPY package.json /var/www/
-RUN npm install
-COPY index.js /var/www/
+FROM node:12-alpine
+WORKDIR /app
+COPY package*.json ./
+RUN npm install --silent
+COPY . .
+CMD [ "npm", "start" ]
+EXPOSE 3000
