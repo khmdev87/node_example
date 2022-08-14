@@ -1,9 +1,12 @@
-const express = require("express");
+const express = require('express');
+
+const PORT = 3000;
+
+//APP 
 const app = express();
-const port = 3000;
+app.get('/', (req,res) => {
+    res.send("반가워요!!!!!!!")
+});
 
-app.get("/", (req, res) => res.send("Hello World!"));
-
-app.listen(port, () =>
-  console.log(`Example app listening at http://localhost:${port}`)
-);
+app.listen(PORT);
+console.log("Server is running")
